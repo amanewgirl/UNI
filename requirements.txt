@@ -1,6 +1,5 @@
 click==6.6
 Flask==0.11.1
-Flask-SocketIO==2.9.3
 Flask-WTF==0.12
 gspread==0.4.1
 gunicorn==19.7.1
