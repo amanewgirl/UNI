@@ -1,5 +1,51 @@
 <html><head>
-    <title></title>
+    <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Ar:Ca:De</title>
+  
+  <meta name="author" content="">
+  <meta name="generator" content="Hugo 0.19">
+  <link href="http://amanewgirl.github.io/web/ico/favicon.ico" rel="icon" type="image/x-icon">
+
+  <link rel="alternate" href="http://amanewgirl.github.io/web/index.xml" type="application/rss+xml" title="ARG@ENU">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  
+   <link rel="stylesheet" href="https://amanewgirl.github.io/web/css/main.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
+  <link rel="stylesheet" href="http://amanewgirl.github.io/web/css/pygment_highlights.css">
+  <link rel="stylesheet" href="http://amanewgirl.github.io/web/css/highlight.min.css">
+
+  
+  
+ 
+  
+    <meta property="og:title" content="Ar:Ca:De">
+  
+
+  
+    <meta property="og:description" content="">
+  
+
+  <meta property="og:type" content="website">
+
+  
+    <meta property="og:url" content="http://amanewgirl.github.io/web/">
+    <link rel="canonical" href="http://amanewgirl.github.io/web/">
+  
+
+  
+    <meta property="og:image" content="http://amanewgirl.github.io/web/img/arg_icon_2.png">
+  
+    
+    
+    
+    
     <script>
 
         const PUZZLE_DIFFICULTY = 2;
@@ -22,7 +68,7 @@
         function init(){
             _img = new Image();
             _img.addEventListener('load',onImage,false);
-            _img.src = "{{ url_for('static', filename='mke.jpg') }}";
+            _img.src = "/static/mke.jpg";
         }
         function onImage(e){
             _pieceWidth = Math.floor(_img.width / PUZZLE_DIFFICULTY)
@@ -201,11 +247,23 @@
                 setTimeout(gameOver,500);
             }
         }
+	
+	function playAgain(){
+            _pieces = [];
+            _mouse = {x:0,y:0};
+            _currentPiece = null;
+            _currentDropPiece = null;
+            _stage.drawImage(_img, 0, 0, _puzzleWidth, _puzzleHeight, 0, 0, _puzzleWidth, _puzzleHeight);
+            createTitle("Great work! Click to keep playing");
+            buildPieces();
+        }
+
+
         function gameOver(){
             document.onmousedown = null;
             document.onmousemove = null;
             document.onmouseup = null;
-            initPuzzle();
+            playAgain();
         }
         function shuffleArray(o){
             for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
@@ -215,8 +273,32 @@
     </script>
 </head>
 
-<body onload="init();">
-    <canvas id="canvas" width="800" height="532" style="border: 1px solid black;"></canvas>
+    <body onload="init();" style="
+    left: 10%;
+">
+    
+    
+
+    
+    
+    <div class="main" style="
+">
+      
+    <h2>Argument Type: Argument from Sign</h2>
+	<br> 
+        
+            
+            <canvas id="canvas" width="618" height="208" style="margin: auto;width: 60%;border: 3px solid lightgray;padding: 10px;"></canvas>
+<br>
+<br>
+
+	<h3> Argument description:</h3>
+	<p>Thing A is true in this situation.
+	Thing A is regarded as generally very reliable form of evidence.
+	B is generally true when it's sign, Thing A is true.
+	Conclusion: B is true in this situation
+	</p>
+		</div>
 
 
 </body></html>

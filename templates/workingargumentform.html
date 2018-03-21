@@ -24,7 +24,7 @@ At w3schools.com you will learn how to make a website. We offer free tutorials i
 	
     <h3>Card to save: <input id="btn-Preview-Image" type="button" value="Add Card to Puzzle"/> <input  id="btn-Clear" type="button" value="Clear"/> </h3>
 	
-    <div id="save" style="height: 150px;
+    <div id="save" style="height: 200px;
     width: 150px; border-style:solid; background-color:white;">
     </div>
 	
@@ -100,13 +100,10 @@ var gtCanvas; // global variable
 	
 	
 	$("#btn-Convert-Html2Image").on('click', function () {
-    var imageData = gtCanvas.toDataURL("image/jpg");
-
+    var imgageData = gtCanvas.toDataURL("image/png");
     // Now browser starts downloading it instead of just showing it
-    var newData = imageData.replace(/^data:image\/jpg/, "data:application/octet-stream");
-    if (window.console) console.log(newData);
-
-$.post("/data", {"newData": newData});
+    var newData = imgageData.replace(/^data:image\/png/, "data:application/octet-stream");
+    $("#btn-Convert-Html2Image").attr("download", "mke.jpg").attr("href", newData);
 	});
 	
 $("#submit").click(function () {

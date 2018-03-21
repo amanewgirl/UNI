@@ -1,4 +1,6 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
+from werkzeug import secure_filename
+
 app = Flask(__name__)
 @app.route('/')
 def index():
@@ -6,7 +8,19 @@ def index():
 
 @app.route('/form')
 def form():
-	return render_template ('argumentform.html')
+	return render_template ('workingargumentform.html')
+
+@app.route('/formtest')
+def formtest():
+	return render_template ('argumentformtest.html')
+
+
+@app.route('/data', methods=['GET', 'POST'])
+def upload_file():
+   if request.method == 'POST':
+      f = request.files['blob']
+      f.save('static/upload.jpg')
+      return 'file uploaded successfully'
 
 @app.route('/shuffle')
 def puzzle():
