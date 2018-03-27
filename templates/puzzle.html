@@ -46,14 +46,17 @@
     
     
     
-    <script>
-
+   <script>
+// in this one i leave it unrandomised and am working on adding a end game message/ next level message and resetting count to zero. can upload once message is done.
         const PUZZLE_DIFFICULTY = 2;
         const PUZZLE_HOVER_TINT = '#009900';
 
         var _stage;
         var _canvas;
-
+		
+		var _imgArray=["","/static/1A.jpg","/static/1D.jpg"];
+		var count;
+		
         var _img;
         var _pieces;
         var _puzzleWidth;
@@ -64,11 +67,18 @@
         var _currentDropPiece;  
 
         var _mouse;
-
+		
+		
+		count=1;
+		
+		
         function init(){
+			
+			
+			
             _img = new Image();
             _img.addEventListener('load',onImage,false);
-            _img.src = "/static/mke.jpg";
+            _img.src = _imgArray[count] ;
         }
         function onImage(e){
             _pieceWidth = Math.floor(_img.width / PUZZLE_DIFFICULTY)
@@ -244,34 +254,29 @@
                 }
             }
             if(gameWin){
+			//checkout, this part will probably help come up with posting the share message/ replay thing
                 setTimeout(gameOver,500);
             }
         }
-	
-	function playAgain(){
-            _pieces = [];
-            _mouse = {x:0,y:0};
-            _currentPiece = null;
-            _currentDropPiece = null;
-            _stage.drawImage(_img, 0, 0, _puzzleWidth, _puzzleHeight, 0, 0, _puzzleWidth, _puzzleHeight);
-            createTitle("Great work! Click to keep playing");
-            buildPieces();
-        }
-
-
         function gameOver(){
-            document.onmousedown = null;
+		count+=1;
+
+ 
+            //initPuzzle();
+			if (count=>2){
+			createTitle("Great work, You're done!");document.onmousedown = null;
             document.onmousemove = null;
             document.onmouseup = null;
-            playAgain();
+			setTimeout(init,500);
+			
+			console.log(count);}
         }
         function shuffleArray(o){
             for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
             return o;
         }
 
-    </script>
-</head>
+    </script></head>
 
     <body onload="init();" style="
     left: 10%;
@@ -288,7 +293,7 @@
 	<br> 
         
             
-            <canvas id="canvas" width="618" height="208" style="margin: auto;width: 60%;border: 3px solid lightgray;padding: 10px;"></canvas>
+            <canvas id="canvas" width="618" height="208" style="margin: auto;width: 80%;border: 3px solid lightgray;padding: 10px;"></canvas>
 <br>
 <br>
 
