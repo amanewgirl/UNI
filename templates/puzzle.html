@@ -54,7 +54,7 @@
         var _stage;
         var _canvas;
 		
-		var _imgArray=["","/static/1A.jpg","/static/1D.jpg"];
+		var _imgArray=["","static/1A.jpg","static/1D.jpg"];
 		var count;
 		
         var _img;
@@ -101,7 +101,7 @@
             _currentPiece = null;
             _currentDropPiece = null;
             _stage.drawImage(_img, 0, 0, _puzzleWidth, _puzzleHeight, 0, 0, _puzzleWidth, _puzzleHeight);
-            createTitle("Click to Shuffle Cards");
+            createTitle("Click to Start Puzzle");
             buildPieces();
         }
         function createTitle(msg){
@@ -264,7 +264,7 @@
  
             //initPuzzle();
 			if (count=>2){
-			createTitle("Great work, You're done!");document.onmousedown = null;
+			createTitle("You're done!");document.onmousedown = null;
             document.onmousemove = null;
             document.onmouseup = null;
 			setTimeout(init,500);
@@ -289,20 +289,45 @@
     <div class="main" style="
 ">
       
-    <h2>Argument Type: Argument from Sign</h2>
+    <a href="#" data-toggle="tooltip" title="There are different styles of arguing, these are called Arguments. Arguments can be classified into different types, these are called Schemes"><h2>Argument Scheme: Argument from Sign</h2></a>
+
+
 	<br> 
         
             
-            <canvas id="canvas" width="618" height="208" style="margin: auto;width: 80%;border: 3px solid lightgray;padding: 20px;"></canvas>
-<br>
+            <canvas id="canvas" width="618" height="208" style="margin: auto; width: 80%; border: 1px solid black; padding: 20px;"></canvas>
+<a href="#" data-toggle="tooltip" title="
+  -Read the cards one by one, you'll notice that each card is one person saying something in a conversation, and the other person is responding to the point they're making
+   -Read the example or argument description  below to help you sort the cards into the right pattern "><h4>help</h4></a><br><iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Funitestflask.herokuapp.com%2Fshuffle&amp;layout=button&amp;size=small&amp;mobile_iframe=true&amp;width=59&amp;height=20&amp;appId" width="59" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 <br>
 
-	<h3> Argument description:</h3>
-	<p>Thing A is true in this situation.
-	Thing A is regarded as generally very reliable form of evidence.
-	B is generally true when it's sign, Thing A is true.
+    	<p></p><h4> Argument Example (for the newbies!)</h4>
+Anything that is indicative of an occurrence of a situation or condition, based on some other observed feature concluding the presence of the premises, is known as argument from sign. For instance: <br><br>
+
+<i> the setting is a forest known for bears</i><br>
+<ul>
+<li>Person A:"Hey there are marks in the snow that look like they belong to bears, I think a bear passed this way"</li>
+<li>Person B:"How do you know for sure bears passed this way?"</li>
+    
+  <i>(argument from sign:)</i>  
+<li>Person A:" Well, paw prints are regarded as a good sign of bears in these parts" </li>
+<li> Person B:"But I dont see a bear"</li> 
+  <li> Person A:"You see paw prints, right?"</li>
+    <li>Person B:"Yes"</li>
+    <li>Person A:"then it is fair to say that a bear passed this way, due to the fact that the sign for a walking bear- paw prints- is right there!</li>
+    <li>Person B: "I see your point, lets get out of here!"</li> <br>
+(from http://lifestyle.iloveindia.com/lounge/types-of-argument-11306.html#B6zd3lPWfhawJv8y.99)
+</ul><br>
+	
+	<p></p>
+    
+	<p></p><h4> Argument description (for the experts!)</h4><br>
+	<ul><li>Thing A is true in this situation.</li>
+	<li>Thing A is regarded as generally very reliable form of evidence.</li>
+	<li>B is generally true when it's sign, Thing A is true.</li>
 	Conclusion: B is true in this situation
-	</p>
+        </ul>
+	<p></p>
 		</div>
 
 

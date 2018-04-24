@@ -26,5 +26,9 @@ def upload_file():
 def puzzle():
 	return render_template ('puzzle.html')
 
+@app.route('/debate')
+def debate():
+	return render_template ('lvl 2Gameboardtest.html')
+
 if __name__ == "__main__":
 	app.run(host='0.0.0.0')
