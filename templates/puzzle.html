@@ -22,6 +22,8 @@
   <link rel="stylesheet" href="http://amanewgirl.github.io/web/css/highlight.min.css">
 
   
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   
  
   
@@ -43,10 +45,14 @@
     <meta property="og:image" content="http://amanewgirl.github.io/web/img/arg_icon_2.png">
   
     
-    
+
     
     
    <script>
+    
+   
+      
+
 // in this one i leave it unrandomised and am working on adding a end game message/ next level message and resetting count to zero. can upload once message is done.
         const PUZZLE_DIFFICULTY = 2;
         const PUZZLE_HOVER_TINT = '#009900';
@@ -296,9 +302,9 @@
         
             
             <canvas id="canvas" width="618" height="208" style="margin: auto; width: 80%; border: 1px solid black; padding: 20px;"></canvas>
-<a href="#" data-toggle="tooltip" title="
-  -Read the cards one by one, you'll notice that each card is one person saying something in a conversation, and the other person is responding to the point they're making
-   -Read the example or argument description  below to help you sort the cards into the right pattern "><h4>help</h4></a><br><iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Funitestflask.herokuapp.com%2Fshuffle&amp;layout=button&amp;size=small&amp;mobile_iframe=true&amp;width=59&amp;height=20&amp;appId" width="59" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+ <a href="#" data-toggle="popover" data-placement="bottom" data-content="-Read the cards one by one, you'll notice that each card is one person saying something in a conversation, and the other person is responding to the point they're making <br>
+   -Read the example or argument description  below to help you sort the cards into the right pattern "><h4>help</h4></a>
+<br><iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Funitestflask.herokuapp.com%2Fshuffle&amp;layout=button&amp;size=small&amp;mobile_iframe=true&amp;width=59&amp;height=20&amp;appId" width="59" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 <br>
 
     	<p></p><h4> Argument Example (for the newbies!)</h4>
@@ -329,6 +335,11 @@ Anything that is indicative of an occurrence of a situation or condition, based 
         </ul>
 	<p></p>
 		</div>
+    <script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover({html:true}); 
 
+});
+</script>
 
 </body></html>
