@@ -23,8 +23,16 @@ def upload_file():
       return 'file uploaded successfully'
 
 @app.route('/shuffle')
-def puzzle():
-	return render_template ('puzzle.html')
+def puz():
+	return render_template ('argSign.html')
+
+@app.route('/shuffle<stage>')
+def puzzle(stage):
+	if stage == '2':
+		return render_template ('argAnalogy.html')
+	elif stage == '3':
+		return render_template ('argExpert.html')
+
 
 @app.route('/debate')
 def debate():
