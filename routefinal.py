@@ -1,6 +1,5 @@
 import os
-from flask import Flask, render_template, request, url_for, abort,render_template, send_from_directory
-from werkzeug import secure_filename
+from flask import Flask, redirect, url_for, abort,render_template, send_from_directory, request
 from flask_socketio import SocketIO, send, emit
 
 app = Flask(__name__)
@@ -25,22 +24,20 @@ def stuff(msg):
     print('Message:' +msg)
     send(msg, broadcast=True)
 
+#this is the base Design across the web app
+def design():
+    return render_template ('design.html')
 
-
-#debate game instructions
-@app.route('/instruct')
-def instructions():
+#Chat
+@app.route("/")
+def index():
 	return render_template('debateInstructions.html')
 
-#debate game
 @app.route('/debate')
-@app.route('/debate/<player>')
-def debate(player=None):
-	return render_template ('boardFinal.html', player=player)
+def debate():
+	return render_template ('indexTest3.html') 
 
-@app.route('/debatetest')
-def deb():
-	return render_template ('lvl 2Gameboardtest.html')
 
-if __name__ == "__main__":
-	app.run(host='0.0.0.0')
+if __name__ =="__main__":
+     app.run(host='0.0.0.0')
+     socketio.run(app, host='0.0.0.0')
