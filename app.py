@@ -65,7 +65,7 @@ def instructions():
 @app.route('/debate')
 @app.route('/debate/<player>')
 def debate(player=None):
-	return render_template ('boardFinal.html', player=player)
+	return render_template ('boardFinalTest.html', player=player)
 
 @app.route('/debatetest')
 def deb():
